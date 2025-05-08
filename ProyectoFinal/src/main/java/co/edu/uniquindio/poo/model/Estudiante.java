@@ -1,10 +1,10 @@
 package co.edu.uniquindio.poo.model;
 
-public class Estudiante extends Persona {
+public class Estudiante extends Usuario {
     private String id;
 
-    public Estudiante(String nombre, String apellido, String cedula, String correo, String id) {
-        super(nombre, apellido, cedula, correo);
+    public Estudiante(String nombre, String apellido, String cedula, String correo, int limitePrestamos ,String id) {
+        super(nombre, apellido, cedula, correo, limitePrestamos);
         this.id = id;
     }
 

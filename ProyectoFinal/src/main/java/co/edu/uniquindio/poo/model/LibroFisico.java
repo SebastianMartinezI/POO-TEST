@@ -12,6 +12,22 @@ public class LibroFisico extends Libro {
         this.ubicacion = ubicacion;
         this.editorial = editorial;
     }
+    /**
+     * Muestra en consola la información del libro físico.
+     */
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Libro Físico:");
+        System.out.println("Título: " + titulo);
+        System.out.println("Autor: " + autor);
+        System.out.println("Género: " + genero);
+        System.out.println("Año: " + anioPublicacion);
+        System.out.println("Páginas: " + paginas);
+        System.out.println("Editorial: " + editorial);
+        System.out.println("Ubicación: " + ubicacion);
+        System.out.println("Estado: " + estado);
+        System.out.println();
+    }
 
     public int getPaginas() {
         return paginas;

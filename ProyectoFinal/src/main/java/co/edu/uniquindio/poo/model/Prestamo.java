@@ -6,14 +6,14 @@ import java.util.List;
 public class Prestamo {
     public String fechaPrestamo;
     public List<Libro>listLibro;
-    public List<Persona>listPersona;
+    public List<Usuario>listUsuarios;
     public List<Devolucion> listDevolucion;
 
 
     public Prestamo(String fechaPrestamo) {
         this.fechaPrestamo = fechaPrestamo;
         this.listLibro = new ArrayList<>();
-        this.listPersona = new ArrayList<>();
+        this.listUsuarios = new ArrayList<>();
         this.listDevolucion = new ArrayList<>();
     }
 
@@ -26,9 +26,9 @@ public class Prestamo {
     }
 
     public String cantidadMaximaDias() {
-        for (Persona persona : listPersona) {
-            String diasMaximos = persona.obtenerdiasprestamo();
-            return (persona.getNombre() + " puede prestar libros por " + diasMaximos + " días.");
+        for (Usuario usuario : listUsuarios) {
+            int diasMaximos = usuario.obtenerdiasprestamo();
+            return (usuario.getNombre() + " puede prestar libros por " + diasMaximos + " días.");
         }
         return "";
     }

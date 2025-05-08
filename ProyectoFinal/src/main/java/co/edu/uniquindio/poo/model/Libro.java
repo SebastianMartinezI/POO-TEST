@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-public class Libro {
+public abstract class Libro {
     protected String titulo;
     protected String autor;
     protected String genero;
@@ -12,7 +12,29 @@ public class Libro {
         this.autor = autor;
         this.genero = genero;
         this.anioPublicacion = anioPublicacion;
-        this.estado = estado;
+        this.estado = Estado.DISPONIBLE;
+    }
+    // Clase abstracta que permitira a los libros de diferente tipo mostrar que tipo de información tienen
+    public abstract void mostrarInformacion();
+
+    //Clase que permite establecer si el libro está disponible
+    public boolean estaDisponible() { return estado == Estado.DISPONIBLE; }
+
+    //Clase que permite prestar un libro teniendo en cuenta su estado
+    public void prestar() {
+        if (estado == Estado.DISPONIBLE) {
+            estado = Estado.PRESTADO;
+        } else {
+            System.out.println("El libro ya está prestado.");
+        }
+    }
+
+    public void devolver() {
+        if (estado == Estado.PRESTADO) {
+            estado = Estado.DISPONIBLE;
+        } else {
+            System.out.println("El libro ya está disponible.");
+        }
     }
 
     public String getTitulo() {

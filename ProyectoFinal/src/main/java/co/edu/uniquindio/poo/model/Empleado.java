@@ -1,18 +1,15 @@
 package co.edu.uniquindio.poo.model;
 
-public class Empleado extends Persona {
+public abstract class Empleado extends Usuario {
     private String id;
 
-    public Empleado(String nombre, String apellido, String cedula, String correo, String id) {
-        super(nombre, apellido, cedula, correo);
+    public Empleado(String nombre, String apellido, String cedula, String correo, int limitePrestamos, String id) {
+        super(nombre, apellido, cedula, correo,limitePrestamos);
         this.id = id;
     }
 
-    @Override
-    public int obtenerdiasprestamo() {
-        int diasPrestamo =15;
-        return diasPrestamo;
-    }
+    public abstract void mostrarRol();
+
     public String getId() {
         return id;
     }

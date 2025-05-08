@@ -4,29 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Administrador extends Empleado {
-    public List<Empleado>listEmpleado;
+    public List<Usuario>listUsuarios;
+    public List<Empleado>listEmpleados;
 
-    public Administrador(String nombre, String apellido, String cedula, String correo, String id) {
-        super(nombre, apellido, cedula, correo, id);
-        this.listEmpleado = new ArrayList<>();
+    public Administrador(String nombre, String apellido, String cedula, String correo, int limitePrestamos, String id) {
+        super(nombre, apellido, cedula, correo, limitePrestamos ,id);
+        this.listUsuarios = new ArrayList<>();
+        this.listEmpleados = new ArrayList<>();
+    }
+    @Override
+    public void mostrarRol() {
+        System.out.println("Rol: Administrador");
+    }
+
+    @Override
+    public int obtenerdiasprestamo() {
+        return 0;
     }
 
     public void registrarEmpleado(Empleado empleado) {
-        listEmpleado.add(empleado);
+        listEmpleados.add(empleado);
     }
 
     public void eliminarEmpleado(Empleado empleado) {
-        for (int i = 0; i <= listEmpleado.size(); i++) {
-            if (listEmpleado.get(i).getId().equals(empleado.getId())) {
-                listEmpleado.remove(i);
+        for (int i = 0; i <= listEmpleados.size(); i++) {
+            if (listEmpleados.get(i).getId().equals(empleado.getId())) {
+                listEmpleados.remove(i);
             }
         }
     }
 
     public void modificarEmpleado(Empleado empleado) {
-        for (int i = 0; i <= listEmpleado.size(); i++) {
-            if (listEmpleado.get(i).getId().equals(empleado.getId())) {
-                listEmpleado.set(i, empleado);
+        for (int i = 0; i <= listEmpleados.size(); i++) {
+            if (listEmpleados.get(i).getId().equals(empleado.getId())) {
+                listEmpleados.set(i, empleado);
             }
         }
     }
@@ -44,10 +55,10 @@ public class Administrador extends Empleado {
     }
 
     public List<Empleado> getListEmpleado() {
-        return listEmpleado;
+        return listEmpleados;
     }
 
     public void setListEmpleado(List<Empleado> listEmpleado) {
-        this.listEmpleado = listEmpleado;
+        this.listEmpleados = listEmpleado;
     }
 }

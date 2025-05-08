@@ -10,6 +10,17 @@ public class LibroDigital extends Libro {
         this.formato = formato;
         this.linkDescarga = linkDescarga;
     }
+    public void mostrarInformacion() {
+        System.out.println("Libro Digital:");
+        System.out.println("Título: " + titulo);
+        System.out.println("Autor: " + autor);
+        System.out.println("Género: " + genero);
+        System.out.println("Año: " + anioPublicacion);
+        System.out.println("Formato: " + formato);
+        System.out.println("Descargar: " + linkDescarga);
+        System.out.println("Estado: " + estado);
+        System.out.println();
+    }
 
     public Formato getFormato() {
         return formato;

@@ -8,13 +8,15 @@ public class Bibliotecario extends Empleado {
     public List<LibroFisico>listLibroFisico;
     public List<LibroDigital>listLibroDigital;
     public List<Prestamo>listPrestamo;
+    public List<Estudiante>listEstudiantes;
 
-    public Bibliotecario(String nombre, String apellido, String cedula, String correo, String id) {
-        super(nombre, apellido, cedula, correo, id);
+    public Bibliotecario(String nombre, String apellido, String cedula, String correo, int limitePrestamos,String id) {
+        super(nombre, apellido, cedula, correo, limitePrestamos ,id);
         this.listLibro = new ArrayList<>();
         this.listLibroFisico = new ArrayList<>();
         this.listLibroDigital = new ArrayList<>();
         this.listPrestamo = new ArrayList<>();
+        this.listEstudiantes = new ArrayList<>();
     }
 
     public void registrarLibro(Libro libro) {
@@ -26,6 +28,20 @@ public class Bibliotecario extends Empleado {
     public void registrarLibroDigital(LibroDigital librodigital ) {
         listLibroDigital.add(librodigital);
     }
+
+    @Override
+    public void mostrarRol() {
+        System.out.println("Rol: Bibliotecario");
+    }
+
+    @Override
+    public int obtenerdiasprestamo() {
+        return 0;
+    }
+
+    public void registrarEstudiante(Estudiante estudiante) {
+        listEstudiantes.add(estudiante);
+        }
 
     public void registrarPrestamo(Prestamo prestamo) {
        listPrestamo.add(prestamo);
