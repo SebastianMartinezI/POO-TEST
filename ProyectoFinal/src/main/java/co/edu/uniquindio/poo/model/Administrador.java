@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Administrador extends Empleado {
-    public List<Usuario>listUsuarios;
+    public List<Persona> listPersonas;
     public List<Empleado>listEmpleados;
 
-    public Administrador(String nombre, String apellido, String cedula, String correo, int limitePrestamos, String id) {
-        super(nombre, apellido, cedula, correo, limitePrestamos ,id);
-        this.listUsuarios = new ArrayList<>();
+    public Administrador(String nombre, String usuario, String contrasena) {
+        super(nombre, usuario, contrasena);
+        this.listPersonas = new ArrayList<>();
         this.listEmpleados = new ArrayList<>();
     }
     @Override
@@ -17,7 +17,6 @@ public class Administrador extends Empleado {
         System.out.println("Rol: Administrador");
     }
 
-    @Override
     public int obtenerdiasprestamo() {
         return 0;
     }
@@ -28,7 +27,7 @@ public class Administrador extends Empleado {
 
     public void eliminarEmpleado(Empleado empleado) {
         for (int i = 0; i <= listEmpleados.size(); i++) {
-            if (listEmpleados.get(i).getId().equals(empleado.getId())) {
+            if (listEmpleados.get(i).getUsuario().equals(empleado.getUsuario())) {
                 listEmpleados.remove(i);
             }
         }
@@ -36,7 +35,7 @@ public class Administrador extends Empleado {
 
     public void modificarEmpleado(Empleado empleado) {
         for (int i = 0; i <= listEmpleados.size(); i++) {
-            if (listEmpleados.get(i).getId().equals(empleado.getId())) {
+            if (listEmpleados.get(i).getUsuario().equals(empleado.getUsuario())) {
                 listEmpleados.set(i, empleado);
             }
         }

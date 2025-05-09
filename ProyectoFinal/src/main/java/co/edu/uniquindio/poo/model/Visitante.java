@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-public class Visitante extends Usuario {
+public class Visitante extends Persona {
     private String id;
 
     public Visitante(String nombre, String apellido, String cedula, String correo,  int limitePrestamos,String id) {
@@ -12,6 +12,17 @@ public class Visitante extends Usuario {
         int diasPrestamos  = 0;
         return diasPrestamos;
     }
+
+    @Override
+    public void mostrarInformacion() {
+        
+    }
+
+    @Override
+    public int getLimitePrestamos() {
+        return 0;
+    }
+
     public int getLimiteLibros(){
         int limiteLibros = 0;
         return limiteLibros;

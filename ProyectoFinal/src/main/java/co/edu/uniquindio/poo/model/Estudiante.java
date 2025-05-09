@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-public class Estudiante extends Usuario {
+public class Estudiante extends Persona {
     private String id;
 
     public Estudiante(String nombre, String apellido, String cedula, String correo, int limitePrestamos ,String id) {
@@ -16,6 +16,14 @@ public class Estudiante extends Usuario {
     }
 
     @Override
+    public void mostrarInformacion() {
+
+    }
+
+    @Override
+    public int getLimitePrestamos() {
+        return 0;
+    }
     //Metodo abstracto para definir limites de prestamo por tipo de usuario
     public int getLimiteLibros(){
         int limiteLibros = 3;

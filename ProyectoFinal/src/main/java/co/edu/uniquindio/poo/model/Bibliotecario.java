@@ -4,29 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bibliotecario extends Empleado {
-    public List<Libro>listLibro;
-    public List<LibroFisico>listLibroFisico;
-    public List<LibroDigital>listLibroDigital;
-    public List<Prestamo>listPrestamo;
-    public List<Estudiante>listEstudiantes;
+    private ControladorLibro controladorLibro;
+    private ControladorUsuario controladorUsuario;
+    private ControladorPrestamo controladorPrestamo;
 
-    public Bibliotecario(String nombre, String apellido, String cedula, String correo, int limitePrestamos,String id) {
-        super(nombre, apellido, cedula, correo, limitePrestamos ,id);
-        this.listLibro = new ArrayList<>();
-        this.listLibroFisico = new ArrayList<>();
-        this.listLibroDigital = new ArrayList<>();
-        this.listPrestamo = new ArrayList<>();
-        this.listEstudiantes = new ArrayList<>();
-    }
-
-    public void registrarLibro(Libro libro) {
-        listLibro.add(libro);
-    }
-    public void registrarLibroFisico(LibroFisico librofisico) {
-        listLibroFisico.add(librofisico);
-    }
-    public void registrarLibroDigital(LibroDigital librodigital ) {
-        listLibroDigital.add(librodigital);
+    /**
+     * Constructor de bibliotecario.
+     */
+    public Bibliotecario(String nombre, String usuario, String contrasena,
+                         ControladorLibro controladorLibro,
+                         ControladorUsuario controladorUsuario,
+                         ControladorPrestamo controladorPrestamo) {
+        super(nombre, usuario, contrasena);
+        this.controladorLibro = controladorLibro;
+        this.controladorUsuario = controladorUsuario;
+        this.controladorPrestamo = controladorPrestamo;
     }
 
     @Override
@@ -34,48 +26,38 @@ public class Bibliotecario extends Empleado {
         System.out.println("Rol: Bibliotecario");
     }
 
-    @Override
-    public int obtenerdiasprestamo() {
-        return 0;
+    public void registrarLibroFisico(String titulo, String autor, String genero, int anioPublicacion, Estado estado,
+                                     int paginas, String ubicacion, String editorial) {
+        controladorLibro.registrarLibroFisico(titulo, autor, genero, anioPublicacion, estado, paginas, ubicacion, editorial);
+    }
+    public void registrarLibroDigital(String titulo, String autor, String genero, int anioPublicacion, Estado estado,
+                                      Formato formato, String linkDescarga) {
+        controladorLibro.registrarLibroDigital(titulo, autor, genero, anioPublicacion, estado, formato, linkDescarga);
     }
 
-    public void registrarEstudiante(Estudiante estudiante) {
-        listEstudiantes.add(estudiante);
-        }
-
-    public void registrarPrestamo(Prestamo prestamo) {
-       listPrestamo.add(prestamo);
+    public void registrarLibroReferencia(String titulo, String autor, String genero, int anioPublicacion, Estado estado, String referencia) {
+        controladorLibro.registrarLibroReferencia(titulo, autor, genero, anioPublicacion, estado, referencia);
     }
 
-    public List<Libro> getListLibro() {
-        return listLibro;
+    public boolean prestarLibro(Persona usuario, Libro libro) {
+        return controladorPrestamo.prestarLibro(usuario, libro);
     }
 
-    public void setListLibro(List<Libro> listLibro) {
-        this.listLibro = listLibro;
+    public boolean devolverLibro(Libro libro) {
+        return controladorPrestamo.devolverLibro(libro);
     }
 
-    public List<LibroFisico> getListLibroFisico() {
-        return listLibroFisico;
+    public void registrarUsuarioEstudiante(String nombre, String apellido, String cedula, String correo, int limitePrestamos ,String id) {
+        controladorUsuario.registrarEstudiante(nombre, apellido, cedula, correo, limitePrestamos , id);
     }
-
-    public void setListLibroFisico(List<LibroFisico> listLibroFisico) {
-        this.listLibroFisico = listLibroFisico;
+    public void registrarDocente(String nombre, String apellido, String cedula, String correo,  int limitePrestamos, String id) {
+        controladorUsuario.registrarDocente(nombre, apellido, cedula, correo, limitePrestamos, id);
     }
-
-    public List<LibroDigital> getListLibroDigital() {
-        return listLibroDigital;
+    public void registrarVisitante(String nombre, String apellido, String cedula, String correo,  int limitePrestamos,String id) {
+        controladorUsuario.registrarVisitante(nombre, apellido, cedula, correo, limitePrestamos, id);
     }
-
-    public void setListLibroDigital(List<LibroDigital> listLibroDigital) {
-        this.listLibroDigital = listLibroDigital;
-    }
-
-    public List<Prestamo> getListPrestamo() {
-        return listPrestamo;
-    }
-
-    public void setListPrestamo(List<Prestamo> listPrestamo) {
-        this.listPrestamo = listPrestamo;
+    public void mostrarPrestamos() {
+        controladorPrestamo.mostrarPrestamosActivos();
     }
 }
+

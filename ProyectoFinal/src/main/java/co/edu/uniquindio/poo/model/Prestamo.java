@@ -1,52 +1,74 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Prestamo {
-    public String fechaPrestamo;
-    public List<Libro>listLibro;
-    public List<Usuario>listUsuarios;
-    public List<Devolucion> listDevolucion;
+    private Persona usuario;
+    private Libro libro;
+    private LocalDate fechaPrestamo;
+    private LocalDate fechaDevolucion;
 
 
-    public Prestamo(String fechaPrestamo) {
-        this.fechaPrestamo = fechaPrestamo;
-        this.listLibro = new ArrayList<>();
-        this.listUsuarios = new ArrayList<>();
-        this.listDevolucion = new ArrayList<>();
+    /**
+     * Constructor que crea un nuevo préstamo con duración estándar (7 días).
+     *
+     * @param usuario Usuario que realiza el préstamo.
+     * @param libro   Libro prestado.
+     */
+    public Prestamo(Persona usuario, Libro libro) {
+        this.usuario = usuario;
+        this.libro = libro;
+        this.fechaPrestamo = LocalDate.now();
+        this.fechaDevolucion = fechaPrestamo.plusDays(7); // Duración estándar de préstamo
     }
 
-    public void listarDevoluciones(Devolucion devolucion) {
-        listDevolucion.add(devolucion);
+    /**
+     * Obtiene el usuario asociado al préstamo.
+     *
+     * @return Usuario que tomó el préstamo.
+     */
+    public Persona getUsuario() {
+        return usuario;
     }
 
-    public void esLibrDigital() {
-        // Lógica para validar si es libro en línea
+    /**
+     * Obtiene el libro prestado.
+     *
+     * @return Libro en préstamo.
+     */
+    public Libro getLibro() {
+        return libro;
     }
 
-    public String cantidadMaximaDias() {
-        for (Usuario usuario : listUsuarios) {
-            int diasMaximos = usuario.obtenerdiasprestamo();
-            return (usuario.getNombre() + " puede prestar libros por " + diasMaximos + " días.");
-        }
-        return "";
-    }
-
-
-
-    public String getFechaPrestamo() {
+    /**
+     * Obtiene la fecha en que se realizó el préstamo.
+     *
+     * @return Fecha del préstamo.
+     */
+    public LocalDate getFechaPrestamo() {
         return fechaPrestamo;
     }
 
-    public void setFechaPrestamo(String fechaPrestamo) {
-        this.fechaPrestamo = fechaPrestamo;
-    }
-    public List<Devolucion> getListDevolucion() {
-        return listDevolucion;
-    }
-    public void setListDevolucion(List<Devolucion> listDevolucion) {
-        this.listDevolucion = listDevolucion;
+    /**
+     * Obtiene la fecha límite para la devolución del libro.
+     *
+     * @return Fecha de devolución esperada.
+     */
+    public LocalDate getFechaDevolucion() {
+        return fechaDevolucion;
     }
 
+    /**
+     * Muestra los detalles del préstamo en consola.
+     */
+    public void mostrarInformacion() {
+        System.out.println("Préstamo:");
+        System.out.println("Usuario: " + usuario.getNombre());
+        System.out.println("Libro: " + libro.getTitulo());
+        System.out.println("Fecha de préstamo: " + fechaPrestamo);
+        System.out.println("Fecha de devolución: " + fechaDevolucion);
+        System.out.println();
+    }
 }

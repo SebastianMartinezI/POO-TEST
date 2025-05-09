@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
- //La clase Persona hace referencia a la clase base para Usuario
-public  abstract class  Usuario {
+ //La clase Persona hace referencia a la clase base para Persona
+public  abstract class Persona {
     private String nombre;
     private String apellido;
     private String cedula;
@@ -8,7 +8,7 @@ public  abstract class  Usuario {
     private int limitePrestamos;
 
 
-    public Usuario(String nombre, String apellido, String cedula, String correo,  int limitePrestamos) {
+    public Persona(String nombre, String apellido, String cedula, String correo, int limitePrestamos) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
@@ -19,8 +19,10 @@ public  abstract class  Usuario {
     //Metodo abstracto para definir duración máxima de préstamos
     public  abstract int obtenerdiasprestamo();
 
+    public abstract void mostrarInformacion();
+
     //Metodo abstracto para definir limites de prestamo por tipo de usuario
-    public  abstract int getLimiteLibros();
+    public  abstract int getLimitePrestamos();
 
     public String getNombre() {
         return nombre;
