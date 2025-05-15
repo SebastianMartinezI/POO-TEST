@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.proyectobibliotecauq.viewcontroller.BibliotecarioViewController"
+            prefWidth="600" prefHeight="400">
+
+    <VBox spacing="10" padding="10">
+        <Label text="Gestión de Biblioteca" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="Cédula:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCedula" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Nombre Usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNombre" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Título Libro:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtTitulo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Autor Libro:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtAutor" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10">
+            <Button fx:id="btnAgregarUsuario" text="Agregar Usuario" onAction="#onAgregarUsuario"/>
+            <Button fx:id="btnRegistrarLibro" text="Registrar Libro" onAction="#onRegistrarLibro"/>
+            <Button fx:id="btnPrestarLibro" text="Prestar Libro" onAction="#onPrestarLibro"/>
+            <Button fx:id="btnDevolverLibro" text="Devolver Libro" onAction="#onDevolverLibro"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

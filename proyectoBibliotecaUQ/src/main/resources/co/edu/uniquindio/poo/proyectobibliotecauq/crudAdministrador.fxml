@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.proyectobibliotecauq.viewController.AdministradorViewController"
+            prefWidth="600" prefHeight="400">
+
+    <VBox spacing="10" padding="10">
+        <Label text="Gestión de Empleados" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtUsuario" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Contraseña:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="txtContrasena" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Tipo de Empleado:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbTipo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregarEmpleado"/>
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminarEmpleado"/>
+            <Button fx:id="btnLimpiar" text="Limpiar" onAction="#onLimpiar"/>
+        </HBox>
+
+        <TableView fx:id="tblListEmpleado">
+            <columns>
+                <TableColumn fx:id="tbcNombre" text="Nombre" prefWidth="200"/>
+                <TableColumn fx:id="tbcUsuario" text="Usuario" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>
