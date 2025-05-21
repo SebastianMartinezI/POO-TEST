@@ -1,52 +1,53 @@
 package co.edu.uniquindio.poo.proyectobibliotecauq;
 
-import co.edu.uniquindio.poo.proyectobibliotecauq.controller.BibliotecarioController;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
+/**
+ * Clase principal que lanza la aplicación JavaFX y carga la pantalla de login.
+ */
 public class App extends Application {
+
+    public Biblioteca biblioteca = new Biblioteca("UQ", "Calle 15 N");
     private Stage primaryStage;
-    public static Biblioteca bibliotecaUQ = new Biblioteca("UQ", "Calle 15 N");
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Gestion de Clientes");
-        openViewPrincipal();
+        this.primaryStage.setTitle("Biblioteca UQ - Login");
+
+        inicializarDatos(); // Datos simulados
+
+        // Cargar login.fxml
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    private void openViewPrincipal() {
-        inicializarData();
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("crudBibliotecario.fxml"));
-            javafx.scene.layout.VBox rootLayout = (javafx.scene.layout.VBox) loader.load();
-            BibliotecarioController bibliotecarioController = loader.getController();
-            bibliotecarioController.setApp(this);
+    /**
+     * Inicializa datos de prueba (usuarios predefinidos).
+     */
+    private void inicializarDatos() {
+        // Puedes simular empleados para el login
+        Administrador administrador = new Administrador("Admin", "admin", "admin123", TipoEmpleado.ADMINISTRADOR);
+        Bibliotecario bibliotecario = new Bibliotecario("Biblio", "biblio", "biblio123", TipoEmpleado.BIBLIOTECARIO);
 
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        administrador.registrarEmpleado("Admin", "admin", "admin123", TipoEmpleado.ADMINISTRADOR);
+        biblioteca.agregarEmpleado(bibliotecario);
+
+        Libro l1 = new LibroFisico("Don Quijote", "Cervantes", "Novela", 1605, Estado.DISPONIBLE, 400, "Estantería A", "Planeta");
+        biblioteca.agregarLibro(l1);
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
-    public void inicializarData(){
-        Libro libro = new LibroDigital("Cien años de soledad", "Gabriel", "Novela", 1990, Estado.DISPONIBLE, Formato.PDF, "WWW");
-
-        Bibliotecario bibliotecario = new Bibliotecario("Juan", "juan12", "12345", libro, usuario, prestamo);
-        bibliotecario.agregarBibliotecario(bibliotecario);
-    }
-
 }
+

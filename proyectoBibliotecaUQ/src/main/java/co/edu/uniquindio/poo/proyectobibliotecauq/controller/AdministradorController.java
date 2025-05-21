@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.proyectobibliotecauq.controller;
 
 
+import co.edu.uniquindio.poo.proyectobibliotecauq.App;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.Empleado;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.GestionEmpleado;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.TipoEmpleado;
@@ -11,7 +12,7 @@ import co.edu.uniquindio.poo.proyectobibliotecauq.model.TipoEmpleado;
  */
 public class AdministradorController {
 
-    private final GestionEmpleado gestionEmpleado;
+    public final GestionEmpleado gestionEmpleado;
 
     /**
      * Constructor que recibe el controlador de empleados.
@@ -48,4 +49,6 @@ public class AdministradorController {
         return gestionEmpleado.autenticar(usuario, contrasena);
     }
 
+    public void setApp(App app) {
+    }
 }

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.proyectobibliotecauq.viewController;
 import co.edu.uniquindio.poo.proyectobibliotecauq.App;
 import co.edu.uniquindio.poo.proyectobibliotecauq.controller.AdministradorController;
+import co.edu.uniquindio.poo.proyectobibliotecauq.model.Bibliotecario;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.Empleado;
 import co.edu.uniquindio.poo.proyectobibliotecauq.model.TipoEmpleado;
 import javafx.beans.property.SimpleStringProperty;
@@ -64,7 +65,7 @@ public class AdministradorViewController {
             if (selected != null) {
                 txtNombre.setText(selected.getNombre());
                 txtUsuario.setText(selected.getUsuario());
-                cmbTipo.setValue(selected.getTipo());
+                cmbTipo.setValue(selected.getTipoEmpleado());
             }
         });
     }
@@ -76,9 +77,19 @@ public class AdministradorViewController {
                 txtUsuario.getText(),
                 txtContrasena.getText(),
                 cmbTipo.getValue()
-        );
+        ) {
+            @Override
+            public void mostrarRol() {
 
-        if (administradorController.registrarEmpleado(empleado.getNombre(), empleado.getUsuario(), empleado.getContrasena(), empleado.getTipo())) {
+            }
+
+            @Override
+            public void agregarBibliotecario(Bibliotecario bibliotecario) {
+
+            }
+        };
+
+        if (administradorController.registrarEmpleado(empleado.getNombre(), empleado.getUsuario(), empleado.getContrasena(), empleado.getTipoEmpleado())) {
             listEmpleados.add(empleado);
             limpiarCampos();
         }
