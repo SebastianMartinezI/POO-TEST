@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c87f0955-cb7a-4c03-b323-ed12cae1d08a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/controller/AdministradorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/controller/BibliotecarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Administrador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Biblioteca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Bibliotecario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Docente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Empleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Estado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Estudiante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Formato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/IDatosPrestamo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Libro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/LibroDigital.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/LibroFisico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/LibroReferencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Prestamo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/model/Visitante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/viewController/AdministradorViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/viewController/BibliotecarioViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/co/edu/uniquindio/poo/proyectobiblioteca/viewController/LoginViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/resources/co/edu/uniquindio/poo/proyectobiblioteca/CrudAdministrador.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/resources/co/edu/uniquindio/poo/proyectobiblioteca/CrudBibliotecario.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca/src/main/resources/co/edu/uniquindio/poo/proyectobiblioteca/login.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ProyectoBiblioteca/ProyectoBiblioteca" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2xeErbmiD1kT68ni5j4A5XsIiy9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Lenovo/OneDrive/Escritorio/Programación 1/POO-TEST/ProyectoBiblioteca",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.poo.proyectobiblioteca.App" />
+      <module name="ProyectoBiblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.poo.proyectobiblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c87f0955-cb7a-4c03-b323-ed12cae1d08a" name="Changes" comment="" />
+      <created>1748290338552</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748290338552</updated>
+      <workItem from="1748290339738" duration="48000" />
+      <workItem from="1748290661594" duration="54000" />
+      <workItem from="1748291052558" duration="40000" />
+      <workItem from="1748307988546" duration="2210000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
